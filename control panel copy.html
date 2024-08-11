@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تبديل الأقسام</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- زر التبديل / الإغلاق -->
+    <button id="toggle-button" class="show-cards">عرض الكروت</button>
+    
+    <!-- قسم الإحصائيات -->
+    <div class="stats-section" id="stats-section">
+        <div class="container">
+            <div class="requestss-section">
+                <div class="container">
+                    <h2>الإحصائيات</h2>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="stats-card1">
+                        <h5>إجمالي الطلبات: 234</h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card2">
+                        <h5>مشاريع تم رفعها: 36</h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card3">
+                        <h5>عدد المستخدمين: 257</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="stats-card4">
+                        <h5>تم الموافقة: 0</h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card5">
+                        <h5>تم البيع: 0</h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stats-card6">
+                        <h5>خيارات أخرى</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- قسم الكروت -->
+    <div class="card-section" id="card-section" style="display: none;">
+        <div class="container">
+            <button id="close-button" class="hide-cards">إغلاق</button>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="statss-card2">
+                        <div class="card">
+                            <a href="end.html">
+                                <img src="images/pexels-rachel-claire-4846097.jpg" alt="برج سكني">
+                            </a>
+                            <h3>برج سكني</h3>
+                            <table>
+                                <tr>
+                                    <th>نوع المشروع</th>
+                                    <td>سكني</td>
+                                </tr>
+                                <tr>
+                                    <th>وصف المشروع</th>
+                                    <td>شقق</td>
+                                </tr>
+                                <tr>
+                                    <th>حالة البيع</th>
+                                    <td>على المخطط</td>
+                                </tr>
+                                <tr>
+                                    <th>الموقع</th>
+                                    <td>شمال الرياض</td>
+                                </tr>
+                                <tr>
+                                    <th>نسبة الإنجاز</th>
+                                    <td>5%</td>
+                                </tr>
+                            </table>
+                        </div>      
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="statss-card2">
+                        <div class="card">
+                            <a href="end.html">
+                                <img src="images/pexels-rachel-claire-4846097.jpg" alt="برج سكني">
+                            </a>
+                            <h3>برج سكني</h3>
+                            <table>
+                                <tr>
+                                    <th>نوع المشروع</th>
+                                    <td>سكني</td>
+                                </tr>
+                                <tr>
+                                    <th>وصف المشروع</th>
+                                    <td>شقق</td>
+                                </tr>
+                                <tr>
+                                    <th>حالة البيع</th>
+                                    <td>على المخطط</td>
+                                </tr>
+                                <tr>
+                                    <th>الموقع</th>
+                                    <td>شمال الرياض</td>
+                                </tr>
+                                <tr>
+                                    <th>نسبة الإنجاز</th>
+                                    <td>5%</td>
+                                </tr>
+                            </table>
+                        </div>      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+    button {
+    margin: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#close-button {
+    background-color: #dc3545; /* لون مختلف لزر الإغلاق */
+}
+
+.card-section {
+    position: relative;
+}
+
+button.show-cards::after {
+    content: "→"; /* رمز السهم للتبديل */
+}
+
+button.hide-cards::after {
+    content: "✖"; /* رمز إغلاق */
+    font-size: 16px;
+}
+</style>
+<script>
+    document.getElementById('toggle-button').addEventListener('click', function() {
+    document.getElementById('stats-section').style.display = 'none';
+    document.getElementById('card-section').style.display = 'block';
+    document.getElementById('toggle-button').style.display = 'none';
+    document.getElementById('close-button').style.display = 'block';
+});
+
+document.getElementById('close-button').addEventListener('click', function() {
+    document.getElementById('stats-section').style.display = 'block';
+    document.getElementById('card-section').style.display = 'none';
+    document.getElementById('toggle-button').style.display = 'block';
+    document.getElementById('close-button').style.display = 'none';
+});
+</script>
